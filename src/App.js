@@ -1,18 +1,15 @@
 import './App.css';
-import imgConstruction from './construction.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/navbar';
+import ItemListContainer from './components/ItemListContainer';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-
-      <img src={imgConstruction} className="App-logo" alt="logo" />
-        <p className="display-6">
-          Site under construction.
-        </p>
-    </div>
+      
+      <div className="App">
+        <Navbar />
+        <ItemListContainer />
+      </div>
   );
 }
 
