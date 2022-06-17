@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from './CartWidget';
-import './Navbar.css'
+import './NavbarComp.css'
 
 function NavbarComp(){
     return(
@@ -23,10 +23,12 @@ function NavbarComp(){
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto navbarItems">
-                        <Nav.Link href="#home" className='navLink'>Home</Nav.Link>
-                        <Nav.Link href="#tienda" className='navLink'>Tienda</Nav.Link>
-                        <Nav.Link href="#nosotros" className='navLink'>Nosotros</Nav.Link>
-                        <Nav.Link href="#contacto" className='navLink'>Contacto</Nav.Link>
+                        <Nav.Link href="#armados" className='navLink'>Armados</Nav.Link>
+                        <Nav.Link href="#tablas" className='navLink'>Tablas</Nav.Link>
+                        <Nav.Link href="#trucks" className='navLink'>Trucks</Nav.Link>
+                        <Nav.Link href="#ruedas" className='navLink'>Ruedas</Nav.Link>
+                        <Nav.Link href="#rulemanes" className='navLink'>Rulemanes</Nav.Link>
+                        <Nav.Link href="#lijas" className='navLink'>Lijas</Nav.Link>
                     </Nav>
                     </Navbar.Collapse>
                     <CartWidget />
