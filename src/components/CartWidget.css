@@ -1,0 +1,15 @@
+.cartWidget{
+    font-size: 1.5em; 
+    color: grey;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.cartWidget:hover{
+    color: #C7C8C9;
+}
+
+.navbar-toggler, .navbar-toggler:focus{
+    border: none;
+    box-shadow: none;
+}

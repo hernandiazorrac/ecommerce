@@ -1,9 +1,10 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCartShopping} from '@fortawesome/free-solid-svg-icons';
+import './CartWidget.css';
 
 function CartWidget(){
     return(
-        <div className='cartWidget' style={{fontSize: "1.5em", color: 'grey', cursor: 'pointer'}}>
+        <div className='cartWidget'>
             <FontAwesomeIcon icon={faCartShopping} />
         </div>
     );
