@@ -8,7 +8,7 @@ function App() {
       
       <div className="App">
         <NavbarComp />
-        <ItemListContainer />
+        <ItemListContainer greetings="Bienvenidos a mi ecommerce"/>
       </div>
   );
 }
