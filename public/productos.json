@@ -1,0 +1,61 @@
+[
+    {
+        "marca": "Flip",
+        "modelo": "Classic",
+        "categoria": "Tablas",
+        "stock": 10,
+        "precio": 8000,
+        "img": "",
+        "id": 1
+    },
+
+    {
+        "marca": "Flip",
+        "modelo": "Blast",
+        "categoria": "Tablas",
+        "stock": 15,
+        "precio": 8000,
+        "img": "",
+        "id": 2
+    },
+
+    {
+        "marca": "Enjoi",
+        "modelo": "Half & Half",
+        "categoria": "Tablas",
+        "stock": 2,
+        "precio": 9500,
+        "img": "",
+        "id": 3
+    },
+
+    {
+        "marca": "Enjoi",
+        "modelo": "Whitey Panda",
+        "categoria": "Tablas",
+        "stock": 9,
+        "precio": 9000,
+        "img": "",
+        "id": 4
+    },
+
+    {
+        "marca": "Zero",
+        "modelo": "Bold Classic",
+        "categoria": "Tablas",
+        "stock": 3,
+        "precio": 10000,
+        "img": "",
+        "id": 5
+    },
+
+    {
+        "marca": "Zero",
+        "modelo": "3 Skull Black",
+        "categoria": "Tablas",
+        "stock": 7,
+        "precio": 9800,
+        "img": "",
+        "id": 6
+    }
+]

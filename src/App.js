@@ -2,13 +2,15 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarComp from './components/NavbarComp';
 import ItemListContainer from './components/ItemListContainer';
+import ItemCount from './components/ItemCount';
 
 function App() {
   return (
       
       <div className="App">
         <NavbarComp />
-        <ItemListContainer greetings="Bienvenidos a mi ecommerce"/>
+        <ItemListContainer />
+        <ItemCount stock={5} initial={1} />
       </div>
   );
 }
