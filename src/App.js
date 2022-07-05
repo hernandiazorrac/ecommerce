@@ -13,7 +13,7 @@ function App() {
       <div className="App">
         <NavbarComp />
         <Routes>
-          <Route path="/" element={<ItemListContainer />}></Route>
+          <Route path="/ecommerce" element={<ItemListContainer />}></Route>
           <Route path="/armados" element={<Armados />}></Route>
           <Route path="/tablas" element={<Tablas />}></Route>
           <Route path="/producto/:productId" element={<ItemDetailContainer />}></Route>
