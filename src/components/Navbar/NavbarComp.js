@@ -13,7 +13,7 @@ function NavbarComp(){
             <Navbar bg="dark" variant="dark" expand="lg">
                 <Container>
                 <Link to="/">
-                <Navbar.Brand href="#home">
+                <Navbar.Brand>
             <img
               alt=""
               src={logo}
