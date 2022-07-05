@@ -14,9 +14,9 @@ function App() {
         <NavbarComp />
         <Routes>
           <Route path="/ecommerce" element={<ItemListContainer />}></Route>
-          <Route path="ecommerce/armados" element={<Armados />}></Route>
-          <Route path="ecommerce/tablas" element={<Tablas />}></Route>
-          <Route path="ecommerce/producto/:productId" element={<ItemDetailContainer />}></Route>
+          <Route path="/armados" element={<Armados />}></Route>
+          <Route path="/tablas" element={<Tablas />}></Route>
+          <Route path="/producto/:productId" element={<ItemDetailContainer />}></Route>
         </Routes>
       </div>
   );
