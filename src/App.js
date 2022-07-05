@@ -1,16 +1,23 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavbarComp from './components/NavbarComp';
-import ItemListContainer from './components/ItemListContainer';
-import ItemCount from './components/ItemCount';
+import NavbarComp from './components/Navbar/NavbarComp';
+import ItemListContainer from './components/Item/ItemListContainer';
+import { Routes, Route } from 'react-router-dom';
+import Armados from './components/Navbar/Armados/Armados';
+import Tablas from './components/Navbar/Tablas/Tablas';
+import ItemDetailContainer from './components/Item/ItemDetailContainer';
 
 function App() {
   return (
       
       <div className="App">
         <NavbarComp />
-        <ItemListContainer />
-        <ItemCount stock={5} initial={1} />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />}></Route>
+          <Route path="/armados" element={<Armados />}></Route>
+          <Route path="/tablas" element={<Tablas />}></Route>
+          <Route path="/producto/:productId" element={<ItemDetailContainer />}></Route>
+        </Routes>
       </div>
   );
 }

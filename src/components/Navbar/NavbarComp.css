@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,400&display=swap');
+
+.navLink{
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 7px;
+    margin-top: 4px;
+    color: rgb(128, 128, 128);
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.navLink:hover{
+    color: #C7C8C9;
+}
