@@ -1,17 +1,14 @@
-// function ItemDetail(props){
-
-//     const producto = props.productData;
-
 export const ItemDetail = ({
-    id
+    marca, modelo, categoria, stock, precio, img, id, descripcion
 }) => {
 
     return(
         <>
-            <h2>ID: {id} </h2>
+            <img src={img}/>
+            <h2>{marca} - {modelo}</h2>
+            <h3>Precio: ${precio} </h3>
+            <h4>{descripcion}</h4>
+            <p>Stock disponible: {stock} unidades.</p>
         </>
     )
 }
-// }
-
-// export default ItemDetail;

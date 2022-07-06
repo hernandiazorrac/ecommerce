@@ -5,7 +5,7 @@ import ItemListContainer from './components/Item/ItemListContainer';
 import { Routes, Route } from 'react-router-dom';
 import Armados from './components/Navbar/Armados/Armados';
 import Tablas from './components/Navbar/Tablas/Tablas';
-import ItemDetailContainer from './components/Item/ItemDetailContainer'
+import { ItemDetailContainer } from './components/Item/ItemDetailContainer'
 
 function App() {
   return (

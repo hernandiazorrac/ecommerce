@@ -1,4 +1,4 @@
-import Item from "./Item";
+import { Item } from "./Item";
 
 function ItemList(props){
     // mapea las cards con los datos del json

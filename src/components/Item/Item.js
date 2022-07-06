@@ -1,13 +1,9 @@
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom"
 import ItemCount from "./ItemCount";
-import { ItemDetail } from "./ItemDetail";
-
 
 export const Item = ({id, product, stock, price, category, img, model}) => {
 
-// function Item(props, id){
-    
     return(
                 <Card style={{ width: '15rem' }} className="mb-4 mx-2 border-0 rounded-0">
                     <Card.Img variant="top" src={img} />
@@ -26,6 +22,3 @@ export const Item = ({id, product, stock, price, category, img, model}) => {
                 </Card>
     )
 }
-// }
-
-export default Item;
