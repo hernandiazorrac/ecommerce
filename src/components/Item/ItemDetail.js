@@ -1,9 +1,12 @@
-
 function ItemDetail(props){
-    const producto = props.productId;
+
+    const producto = props.productData;
+
     return(
-        <h2>Marca: {producto.marca}</h2>
+        <>
+            <h2>ID: {producto.id} </h2>
+        </>
     )
 }
 
-export default ItemDetail
+export default ItemDetail;

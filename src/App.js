@@ -5,7 +5,7 @@ import ItemListContainer from './components/Item/ItemListContainer';
 import { Routes, Route } from 'react-router-dom';
 import Armados from './components/Navbar/Armados/Armados';
 import Tablas from './components/Navbar/Tablas/Tablas';
-import ItemDetailContainer from './components/Item/ItemDetailContainer';
+import ItemDetailContainer from './components/Item/ItemDetailContainer'
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Route path="/ecommerce" element={<ItemListContainer />}></Route>
           <Route path="/armados" element={<Armados />}></Route>
           <Route path="/tablas" element={<Tablas />}></Route>
-          <Route path="/producto/:productId" element={<ItemDetailContainer />}></Route>
+          <Route path="/producto/:productoId" element={<ItemDetailContainer />}></Route>
         </Routes>
       </div>
   );
