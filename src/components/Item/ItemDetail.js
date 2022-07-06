@@ -1,12 +1,17 @@
-function ItemDetail(props){
+// function ItemDetail(props){
 
-    const producto = props.productData;
+//     const producto = props.productData;
+
+export const ItemDetail = ({
+    id
+}) => {
 
     return(
         <>
-            <h2>ID: {producto.id} </h2>
+            <h2>ID: {id} </h2>
         </>
     )
 }
+// }
 
-export default ItemDetail;
+// export default ItemDetail;

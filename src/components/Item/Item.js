@@ -1,5 +1,7 @@
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom"
 import ItemCount from "./ItemCount";
+import { ItemDetail } from "./ItemDetail";
 
 function Item(props){
     
@@ -14,7 +16,9 @@ function Item(props){
                         </Card.Text>
                         <ItemCount stock={props.stock} initial={1} />
                         <Button className="btn btn-warning btn-sm">Agregar al carrito</Button>
+                        <Link to="/producto/:productoId">
                         <Button className="btn btn-warning mt-3 btn-sm">Ver más</Button>
+                        </Link>
                     </Card.Body>
                 </Card>
     )
