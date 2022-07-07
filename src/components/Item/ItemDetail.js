@@ -1,5 +1,7 @@
+import ItemCount from "./ItemCount"
+
 export const ItemDetail = ({
-    marca, modelo, categoria, stock, precio, img, id, descripcion
+    marca, modelo, stock, precio, img, descripcion
 }) => {
 
     return(
@@ -9,6 +11,8 @@ export const ItemDetail = ({
             <h3>Precio: ${precio} </h3>
             <h4>{descripcion}</h4>
             <p>Stock disponible: {stock} unidades.</p>
+
+            <ItemCount stock={stock} initial={1}/>
         </>
     )
 }

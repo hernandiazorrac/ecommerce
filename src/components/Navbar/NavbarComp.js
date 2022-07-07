@@ -12,7 +12,7 @@ function NavbarComp(){
         <div>
             <Navbar bg="dark" variant="dark" expand="lg">
                 <Container>
-                <Link to="/ecommerce">
+                <Link to="/">
                 <Navbar.Brand>
             <img
               alt=""
@@ -27,12 +27,12 @@ function NavbarComp(){
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto navbarItems">
-                            <Link to="/armados" className='navLink'>Armados</Link>
-                            <Link to="/tablas" className='navLink'>Tablas</Link>
-                            <Link to="/trucks" className='navLink'>Trucks</Link>
-                            <Link to="/ruedas" className='navLink'>Ruedas</Link>
-                            <Link to="/rulemanes" className='navLink'>Rulemanes</Link>
-                            <Link to="/lijas" className='navLink'>Lijas</Link>
+                            <Link to="/categoria/armados" className='navLink'>Armados</Link>
+                            <Link to="/categoria/tablas" className='navLink'>Tablas</Link>
+                            <Link to="/categoria/trucks" className='navLink'>Trucks</Link>
+                            <Link to="/categoria/ruedas" className='navLink'>Ruedas</Link>
+                            <Link to="/categoria/rulemanes" className='navLink'>Rulemanes</Link>
+                            <Link to="/categoria/lijas" className='navLink'>Lijas</Link>
                         </Nav>
                         <CartWidget />
                     </Navbar.Collapse>
