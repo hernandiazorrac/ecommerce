@@ -1,11 +1,10 @@
-import { Item } from "./Item";
+import Item from "./Item";
 
-function ItemList({ruta, productos}){
+function ItemList({ productos }){
     // mapea las cards con los datos del json
     return( 
         <div className='catalogo justify-content-center mx-auto row py-5'>
             {productos.map(i => <Item 
-            ruta={ruta}
             product={i.marca} 
             model={i.modelo} 
             price={i.precio} 
