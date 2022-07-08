@@ -1,3 +1,9 @@
 .addBtn:focus, .removeBtn:focus{
     box-shadow: none;
 }
+
+.detailStockDisponible{
+    border: 1px solid black ;
+    border-radius: 25px;
+    padding: 5px 15px;
+}

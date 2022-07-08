@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import ItemCount from "./ItemCount"
 
@@ -11,14 +11,12 @@ export const ItemDetail = ({
         setAdd(!add)
 }
 
-
     return(
         <>
             <img src={img}/>
             <h2>{marca} - {modelo}</h2>
             <h3>Precio: ${precio} </h3>
             <h4>{descripcion}</h4>
-            <p>Stock disponible: {stock} unidades.</p>
 
             {
                 add ? <span className="d-block border-top p-2">¡Añadido al carrito!</span> : <ItemCount stock={stock} initial={0} onAdd={addToCart}/>

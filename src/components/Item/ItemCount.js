@@ -30,10 +30,14 @@ function ItemCount({stock, initial, onAdd}){
 
     return(<>
         <div className='py-3'>
-            <p>{stockActual > 1 ? `${stockActual} unidades disponibles` : `${stockActual} unidad disponible`}</p>
-            <button className='btn btn-dark btn-sm removeBtn' onClick={restar}>-</button>
-            <span className='justify-content-center px-3'>{num}</span>
-            <button className='btn btn-dark btn-sm addBtn' onClick={sumar}>+</button>
+            
+            <span className='detailStockDisponible'>{stockActual > 1 ? `${stockActual} unidades disponibles` : `${stockActual} unidad disponible`}</span>
+
+            <div className='mt-3'>
+                <button className='btn btn-dark btn-sm removeBtn' onClick={restar}>-</button>
+                <span className='justify-content-center px-3'>{num}</span>
+                <button className='btn btn-dark btn-sm addBtn' onClick={sumar}>+</button>
+            </div>
             
             {  num > 0 ?
                 <button className="d-flex mx-auto mt-3 btn btn-warning btn-sm" onClick={() => onAdd()}>Agregar al carrito

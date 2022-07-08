@@ -1,7 +1,7 @@
 import './ItemListContainer.css'
 import ItemList from './ItemList';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function ItemListContainer({ greetings }){
 
@@ -39,7 +39,9 @@ function ItemListContainer({ greetings }){
         <>
             {catId !== undefined && <h2 className="productosTitulo mt-5 text-uppercase">{catId}</h2>}
             <h2 className="productosTitulo mt-5 text-uppercase pb-4">{greetings}</h2>
-            <ItemList productos={info}/>
+            
+                <ItemList productos={info}/>
+            
         </>
     );
 }
