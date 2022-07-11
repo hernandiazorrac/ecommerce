@@ -2,7 +2,7 @@ import {useState} from 'react';
 import Swal from 'sweetalert2';
 import './ItemCount.css';
 
-function ItemCount({stock, initial, onAdd}){
+function ItemCount({item, stock, initial, addItem}){
     const [num, setNum] = useState(initial);
 
     let stockActual = stock - num;
@@ -18,7 +18,7 @@ function ItemCount({stock, initial, onAdd}){
                 confirmButtonText: 'Entendido'
             })
         }
-    }
+    } 
 
     const restar = () => {
         if(num > initial){
@@ -40,10 +40,10 @@ function ItemCount({stock, initial, onAdd}){
             </div>
             
             {  num > 0 ?
-                <button className="d-flex mx-auto mt-3 btn btn-warning btn-sm" onClick={() => onAdd()}>Agregar al carrito
+                <button className="d-flex mx-auto mt-3 btn btn-warning btn-sm" onClick={() => addItem({item, num})}>Agregar al carrito
                 </button>
                 :
-                <button className="d-flex mx-auto mt-3 btn btn-warning btn-sm disabled" onClick={() => onAdd()}>Agregar al carrito
+                <button className="d-flex mx-auto mt-3 btn btn-warning btn-sm disabled">Agregar al carrito
                 </button>
             }
         </div>

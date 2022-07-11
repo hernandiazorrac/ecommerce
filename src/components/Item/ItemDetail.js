@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import ItemCount from "./ItemCount"
 
 export const ItemDetail = ({
-    marca, modelo, stock, precio, img, descripcion
+    marca, modelo, stock, precio, img, descripcion, item
 }) => { 
     const [add, setAdd] = useState(false)
-    
+   
     const addToCart = () => {
         setAdd(!add)
 }
@@ -19,7 +19,7 @@ export const ItemDetail = ({
             <h4>{descripcion}</h4>
 
             {
-                add ? <span className="d-block border-top p-2">¡Añadido al carrito!</span> : <ItemCount stock={stock} initial={0} onAdd={addToCart}/>
+                add ? <span className="d-block border-top p-2">¡Añadido al carrito!</span> : <ItemCount item={item} stock={stock} initial={0} addItem={addToCart}/>
             }
             {
                 add && <Link to="/cart" className="btn btn-success btn-sm">Finalizar compra</Link>
