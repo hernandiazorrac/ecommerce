@@ -2,7 +2,7 @@ import {useState} from 'react';
 import Swal from 'sweetalert2';
 import './ItemCount.css';
 
-function ItemCount({item, stock, initial, addItem}){
+function ItemCount({item, stock, initial, onAdd}){
     const [num, setNum] = useState(initial);
 
     let stockActual = stock - num;
@@ -40,7 +40,7 @@ function ItemCount({item, stock, initial, addItem}){
             </div>
             
             {  num > 0 ?
-                <button className="d-flex mx-auto mt-3 btn btn-warning btn-sm" onClick={() => addItem({item, num})}>Agregar al carrito
+                <button className="d-flex mx-auto mt-3 btn btn-warning btn-sm" onClick={() => onAdd({item, num})}>Agregar al carrito
                 </button>
                 :
                 <button className="d-flex mx-auto mt-3 btn btn-warning btn-sm disabled">Agregar al carrito

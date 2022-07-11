@@ -7,6 +7,7 @@ export const ItemDetail = ({
 }) => { 
     const [add, setAdd] = useState(false)
    
+
     const addToCart = () => {
         setAdd(!add)
 }
@@ -19,7 +20,7 @@ export const ItemDetail = ({
             <h4>{descripcion}</h4>
 
             {
-                add ? <span className="d-block border-top p-2">¡Añadido al carrito!</span> : <ItemCount item={item} stock={stock} initial={0} addItem={addToCart}/>
+                add ? <span className="d-block border-top p-2">¡Añadido al carrito!</span> : <ItemCount item={item} stock={stock} initial={0} onAdd={addToCart}/>
             }
             {
                 add && <Link to="/cart" className="btn btn-success btn-sm">Finalizar compra</Link>
