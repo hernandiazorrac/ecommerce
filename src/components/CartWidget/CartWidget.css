@@ -13,3 +13,7 @@
     border: none;
     box-shadow: none;
 }
+
+.cartWidgetNumber{
+    font-size: 15px;
+}

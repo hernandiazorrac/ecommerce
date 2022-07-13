@@ -40,7 +40,7 @@ function ItemCount({item, stock, initial, onAdd}){
             </div>
             
             {  num > 0 ?
-                <button className="d-flex mx-auto mt-3 btn btn-warning btn-sm" onClick={() => onAdd(num)}>Agregar al carrito
+                <button className="d-flex mx-auto mt-3 btn btn-warning btn-sm" onClick={() => onAdd({item}, num)}>Agregar al carrito
                 </button>
                 :
                 <button className="d-flex mx-auto mt-3 btn btn-warning btn-sm disabled">Agregar al carrito

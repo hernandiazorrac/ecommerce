@@ -17,7 +17,7 @@ export const ItemDetailContainer = () => {
         getItem.then((res) => {
             setDatos(res);
         })
-    }, []);
+    }, [params.productoId]);
 
 
     return(
