@@ -1,7 +1,7 @@
 import './ItemListContainer.css'
 import ItemList from './ItemList';
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function ItemListContainer({ greetings }){
 

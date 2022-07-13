@@ -1,16 +1,18 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState, } from "react"
 import { Link } from "react-router-dom"
+import { CartContext } from "../Context/CartContext"
 import ItemCount from "./ItemCount"
 
 export const ItemDetail = ({
     marca, modelo, stock, precio, img, descripcion, item
 }) => { 
+    const {addToCart} = useContext(CartContext)
     const [add, setAdd] = useState(false)
-   
 
-    const addToCart = () => {
+    const onAdd = (num) => {
+        addToCart(item, num)
         setAdd(!add)
-}
+    }
 
     return(
         <>
@@ -19,12 +21,14 @@ export const ItemDetail = ({
             <h3>Precio: ${precio} </h3>
             <h4>{descripcion}</h4>
 
-            {
-                add ? <span className="d-block border-top p-2">¡Añadido al carrito!</span> : <ItemCount item={item} stock={stock} initial={0} onAdd={addToCart}/>
+             {
+                add ? <span className="d-block border-top p-2">¡Añadido al carrito!</span> : <ItemCount item={item} stock={stock} initial={0} onAdd={onAdd}/>
             }
-            {
+             {
                 add && <Link to="/cart" className="btn btn-success btn-sm">Finalizar compra</Link>
             }
         </>
     )
 }
+
+export default ItemDetail
