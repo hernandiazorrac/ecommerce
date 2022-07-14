@@ -11,8 +11,9 @@ export const ItemDetail = ({
 
     const { addItem } = useContext(CartContext)
 
-    const onAdd = () => {
+    const onAdd = (item, cant) => {
         setAdd(!add)
+        addItem(item, cant)
     }
 
     return(
@@ -22,10 +23,13 @@ export const ItemDetail = ({
             <h3>Precio: ${precio} </h3>
             <h4>{descripcion}</h4>
 
-             {
-                add ? <span className="d-block border-top p-2">¡Añadido al carrito!</span> : <ItemCount key={id} item={item} stock={stock} initial={0} onAdd={addItem}/>
+            {
+                add ? <span className="d-block border-top p-2">¡Añadido al carrito!</span> : <ItemCount key={id} item={item} stock={stock} initial={0} onAdd={onAdd}/>
             }
-                <Link to="/cart" className="btn btn-success btn-sm">Finalizar compra</Link>
+
+            {
+                add && <Link to="/cart" className="btn btn-success btn-sm">Finalizar compra</Link>
+            }
 
         </>
     )
