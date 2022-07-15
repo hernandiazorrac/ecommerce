@@ -10,13 +10,13 @@ export const CartProvider = ({ children }) => {
         return found;
     }
 
-    const addItem = (item, cant) => {
-        isInCart(item.id) ? setItems(items.map((product) => {
-            if(product.id === item.id){
+    const addItem = (id, cant) => {
+        isInCart(id) ? setItems(items.map((product) => {
+            if(product.id === id){
                 product.cant += cant;
             }
             return product;
-        })) : setItems([...items, {id: item.id, item: item.marca, cant: cant}])
+        })) : setItems([...items, {cant: cant}])
     }
 
     const removeItem = (id) => {

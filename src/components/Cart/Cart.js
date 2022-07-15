@@ -18,9 +18,9 @@ const Cart = () => {
     return(
         <div>
             {
-                items.map((item) =>(
+                items.map(item =>(
                     <div key={item.id}>
-                        <h1>Producto: {item.titulo}</h1>
+                        <h1>Producto: {item.name}</h1>
                         <h2>Cantidad: {item.cant}</h2>
                         <div className="btn btn-warning btn-sm" onClick={() => removeItem(item.id)}>Borrar producto</div>
                     </div>
