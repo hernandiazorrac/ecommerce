@@ -35,7 +35,7 @@ function NavbarComp(){
                             <Link to="/categoria/lijas" className='navLink'>Lijas</Link>
                         </Nav>
                         <Link to="/cart" className='navLink'>
-                        <CartWidget />
+                            <CartWidget />
                         </Link>
                     </Navbar.Collapse>
                 </Container>
