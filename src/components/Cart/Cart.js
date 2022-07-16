@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom";
 import { CartContext } from "../Context/CartContext"
+import './Cart.css'
 
 const Cart = () => {
     const { items, removeItem, clearCart } = useContext(CartContext);
@@ -19,9 +20,11 @@ const Cart = () => {
         <div>
             {
                 items.map(item =>(
-                    <div key={item.id}>
-                        <h1>Producto: {item.name}</h1>
-                        <h2>Cantidad: {item.cant}</h2>
+                    <div className="p-4" key={item.id}>
+                        <img className="img-fluid cartItemImg" src={item.img} />
+                        <h1>{item.marca} - {item.modelo} (x{item.cant})</h1>
+                        <h3>{item.descripcion}</h3>
+                        <h3>${item.precio}</h3>
                         <div className="btn btn-warning btn-sm" onClick={() => removeItem(item.id)}>Borrar producto</div>
                     </div>
                 ))
