@@ -16,11 +16,13 @@ function ItemListContainer({ greetings }){
                 const db = getFirestore()
                 const itemsRef = collection(db, "items")
                 getDocs(itemsRef).then((snapshot) => {
-                        if(snapshot){
-                            setInfo(snapshot.docs.map((doc) => doc.data()))
+                        // if(snapshot){
+                            let infoFiltered = snapshot.docs.map((doc) => doc.data())
+                            setInfo(infoFiltered)
                             setIsLoading(false)
-                        }
+                        // }
                 })
+                    }, [catId])
 
 
                 // fetch('/data/productos.json', {
@@ -46,7 +48,7 @@ function ItemListContainer({ greetings }){
         //     }, 500);
         // }
         
-    }, [catId])
+
 
     return(
         <>
