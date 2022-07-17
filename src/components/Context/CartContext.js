@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import Swal from "sweetalert2";
 
 export const CartContext = createContext({})
 
@@ -21,7 +22,52 @@ export const CartProvider = ({ children }) => {
 
 
     const removeItem = (id) => {
+        areYouSureDelete()
         setItems(items.filter(item => item.id !== id))
+    }
+
+    const areYouSureDelete = () => {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "Estás por eliminar un producto del carrito.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#000',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'Cancelar',
+            confirmButtonText: 'Eliminar',
+          }).then((result) => {
+            if (result.isDismissed) {
+                setItems(items)
+            }else if (result.isConfirmed){
+                Swal.fire({
+                    title: 'Eliminado del carrito',
+                    text: "Producto eliminado con éxito.",
+                    icon: 'success',
+            })
+        }})
+    }
+
+    const areYouSureClear = () => {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "Estás por eliminar vaciar el carrito.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#000',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'Cancelar',
+            confirmButtonText: 'Vaciar',
+          }).then((result) => {
+            if (result.isDismissed) {
+                setItems(items)
+            }else if (result.isConfirmed){
+                Swal.fire({
+                    title: 'Vaciado',
+                    text: "Carrito vaciado con éxito.",
+                    icon: 'success',
+            })
+        }})
     }
 
     const clearCart = () => {
@@ -30,7 +76,7 @@ export const CartProvider = ({ children }) => {
 
 
     return(
-        <CartContext.Provider value={{ items, addItem, removeItem, clearCart }}>
+        <CartContext.Provider value={{ items, addItem, removeItem, clearCart, areYouSureDelete, areYouSureClear }}>
             {children}
         </CartContext.Provider>
     )
