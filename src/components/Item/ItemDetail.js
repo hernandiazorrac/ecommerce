@@ -13,7 +13,7 @@ export const ItemDetail = ({
 
     const onAdd = (item, cant) => {
         setAdd(!add)
-        addItem(item, cant)
+        addItem({id, marca, modelo, stock, precio, img, descripcion}, cant)
     }
 
     return(

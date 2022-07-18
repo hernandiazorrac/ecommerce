@@ -1,9 +1,10 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom";
 import { CartContext } from "../Context/CartContext"
+import './Cart.css'
 
 const Cart = () => {
-    const { items, removeItem, clearCart } = useContext(CartContext);
+    const { items, removeItem, clearCart, areYouSureDelete, areYouSureClear } = useContext(CartContext);
 
     
 
@@ -19,14 +20,19 @@ const Cart = () => {
         <div>
             {
                 items.map(item =>(
-                    <div key={item.id}>
-                        <h1>Producto: {item.name}</h1>
-                        <h2>Cantidad: {item.cant}</h2>
-                        <div className="btn btn-warning btn-sm" onClick={() => removeItem(item.id)}>Borrar producto</div>
+                <div>
+                    <div className="p-2 " key={item.id}>
+                        <img className="img-fluid cartItemImg" src={item.img} />
+                        <h3 className="">{item.marca} - {item.modelo} (x{item.cant})</h3>
+                        <p>{item.descripcion}</p>
+                        <p>${item.precio}</p>
+                        <button className="btn btn-warning btn-sm" onClick={() => {removeItem(item.id); areYouSureDelete(); }}>Borrar producto</button>
                     </div>
+                </div>
+                    
                 ))
             }
-            <div className="mt-2 btn btn-danger btn-sm" onClick={() => clearCart()}>Vaciar carrito</div>
+            <div className="mt-2 btn btn-danger btn-sm" onClick={() => {clearCart(); areYouSureClear();}}>Vaciar carrito</div>
         </div>
     )
 }
