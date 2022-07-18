@@ -6,18 +6,21 @@ function Item ({id, product, price, category, img, model}) {
 
     return(
             <Card style={{ width: '15rem' }} className="mb-4 mx-2 border-0 rounded-0 itemCard">
-                <Card.Img variant="top" src={img} />
+                <Link to={`/producto/${id}`} style={{ textDecoration: 'none', color: '#000' }}>
+                    <Card.Img variant="top" className="" src={img} />
                 <Card.Body>
-                    <Card.Title>{product} - {model}</Card.Title>
+                    <Card.Title className="fs-6 fw-bold text-uppercase">{product} - {model}</Card.Title>
                     <Card.Text>
-                        <span className="d-flex justify-content-center mb-2">${price}</span>
-                        <span className="text-capitalize border rounded-pill px-2 py-1">Categoría: {category}</span>
+                        <span className="d-flex justify-content-center mb-3 fs-6 fw-light">${price}</span>
+                        <span className="text-capitalize border rounded-pill px-2 py-1 fw-light">Categoría: {category}</span>
                     </Card.Text>
-                    <Link to={`/producto/${id}`}>
+                    {/* <Link to={`/producto/${id}`}>
                         <Button className="btn btn-dark btn-sm itemDetallesBoton">Ver detalles</Button>
-                    </Link>
+                    </Link> */}
                 </Card.Body>
+                </Link>
             </Card>
+
     )
 }
 
