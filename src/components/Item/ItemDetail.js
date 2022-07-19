@@ -2,6 +2,7 @@ import { useContext, useState, } from "react"
 import { Link } from "react-router-dom"
 import { CartContext } from "../Context/CartContext"
 import ItemCount from "./ItemCount"
+import {isLoading} from './ItemListContainer'
 
 export const ItemDetail = ({
     marca, modelo, stock, precio, img, descripcion, item, id
@@ -11,6 +12,8 @@ export const ItemDetail = ({
 
     const { addItem } = useContext(CartContext)
 
+    
+
     const onAdd = (item, cant) => {
         setAdd(!add)
         addItem({id, marca, modelo, stock, precio, img, descripcion, item}, cant)
@@ -18,10 +21,12 @@ export const ItemDetail = ({
 
     return(
         <>
+            
             <img src={img} alt={'lorem'}/>
             <h2>{marca} - {modelo}</h2>
             <h3>Precio: ${Intl.NumberFormat("es-AR").format(precio)} </h3>
             <h4>{descripcion}</h4>
+            
 
             {
                 add ? <span className="d-block border-top p-2">¡Añadido al carrito!</span> : <ItemCount key={id} item={item} stock={stock} initial={0} onAdd={onAdd}/>
@@ -29,6 +34,7 @@ export const ItemDetail = ({
 
             {
                 add && <Link to="/cart" className="btn btn-success btn-sm">Finalizar compra</Link>
+                
             }
 
         </>

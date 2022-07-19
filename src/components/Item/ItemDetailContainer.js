@@ -8,17 +8,22 @@ export const ItemDetailContainer = () => {
     const {productoId} = useParams();
     const [datos, setDatos] = useState({})
 
+    const [isLoading, setIsLoading] = useState(true)
+
+
     useEffect(() => {
         GetItemFiltered(productoId)
         .then((i) => {
             setDatos(i)
+            setIsLoading(false)
         })
     }, [productoId]);
 
 
     return(
         <>
-            <ItemDetail {...datos} />
+        {isLoading && <p>Cargando...</p>}
+        {!isLoading && <ItemDetail {...datos} />}
         </>
     )
 }
