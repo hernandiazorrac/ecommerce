@@ -13,14 +13,14 @@ export const ItemDetail = ({
 
     const onAdd = (item, cant) => {
         setAdd(!add)
-        addItem({id, marca, modelo, stock, precio, img, descripcion}, cant)
+        addItem({id, marca, modelo, stock, precio, img, descripcion, item}, cant)
     }
 
     return(
         <>
             <img src={img} alt={'lorem'}/>
             <h2>{marca} - {modelo}</h2>
-            <h3>Precio: ${precio} </h3>
+            <h3>Precio: ${Intl.NumberFormat("es-AR").format(precio)} </h3>
             <h4>{descripcion}</h4>
 
             {

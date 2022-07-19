@@ -74,9 +74,16 @@ export const CartProvider = ({ children }) => {
         setItems([])
     }
 
+    const getTotal = () => {
+        let total = 0;
+        items.forEach((item) => {
+            total = total + item.cant * item.precio;
+        });
+        return Intl.NumberFormat("es-AR").format(total);
+    }
 
     return(
-        <CartContext.Provider value={{ items, addItem, removeItem, clearCart, areYouSureDelete, areYouSureClear }}>
+        <CartContext.Provider value={{ items, addItem, removeItem, clearCart, areYouSureDelete, areYouSureClear, getTotal }}>
             {children}
         </CartContext.Provider>
     )

@@ -1,23 +1,19 @@
 import { useEffect, useState } from "react";
 import  ItemDetail  from "./ItemDetail";
 import { useParams } from "react-router-dom";
-import { data } from "../../data/data";
+import { GetItemFiltered } from "../../services/firestore";
 
 
 export const ItemDetailContainer = () => {
-    const params = useParams();
+    const {productoId} = useParams();
     const [datos, setDatos] = useState({})
 
     useEffect(() => {
-        const getItem = new Promise((resolve) => {
-        const myData = data.find((producto) => producto.id === parseInt(params.productoId));
-
-            resolve(myData);
+        GetItemFiltered(productoId)
+        .then((i) => {
+            setDatos(i)
         })
-        getItem.then((res) => {
-            setDatos(res);
-        })
-    }, [params.productoId]);
+    }, [productoId]);
 
 
     return(

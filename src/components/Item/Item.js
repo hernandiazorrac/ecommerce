@@ -11,7 +11,7 @@ function Item ({id, product, price, category, img, model}) {
                 <Card.Body>
                     <Card.Title className="fs-6 fw-bold text-uppercase">{product} - {model}</Card.Title>
                     <Card.Text>
-                        <span className="d-flex justify-content-center mb-3 fs-6 fw-light">${price}</span>
+                        <span className="d-flex justify-content-center mb-3 fs-6 fw-light">${Intl.NumberFormat("es-AR").format(price)}</span>
                         <span className="text-capitalize border rounded-pill px-2 py-1 fw-light">Categoría: {category}</span>
                     </Card.Text>
                     {/* <Link to={`/producto/${id}`}>

@@ -5,26 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getFirestore } from 'firebase/firestore';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAGlxVjGptiqj0W-9OFwYF_g5BMsFJBvhY",
-  authDomain: "skateshopreactjs.firebaseapp.com",
-  projectId: "skateshopreactjs",
-  storageBucket: "skateshopreactjs.appspot.com",
-  messagingSenderId: "779561849355",
-  appId: "1:779561849355:web:23bdb58ff1325d2ccdad0e"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-export const getData = () => getFirestore(app)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
