@@ -22,8 +22,7 @@ export const ItemDetailContainer = () => {
 
     return(
         <>
-        {isLoading && <p>Cargando...</p>}
-        {!isLoading && <ItemDetail {...datos} />}
+        {isLoading ? <p>Cargando...</p> : <ItemDetail {...datos} />}
         </>
     )
 }
