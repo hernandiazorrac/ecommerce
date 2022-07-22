@@ -1,7 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { collection, doc, getDoc, getDocs, getFirestore, query, where } from 'firebase/firestore';
-import { useParams } from "react-router-dom";
+import { collection, doc, getDoc, getDocs, getFirestore, orderBy, query, where } from 'firebase/firestore';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -21,11 +20,14 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
 export async function GetAllItems(){
+
   //trae la colección desde firebase
-  const itemsRef = collection (db, "items");
+  const itemsRef = collection(db, "items");
+
+  const q = query(itemsRef, orderBy("id", "asc"))
 
   //lee los documentos de la colección con getDocs
-  const docsSnapshot = await getDocs(itemsRef)
+  const docsSnapshot = await getDocs(q)
 
   //recibe un array "docs" en snapshot
   const dataItems = docsSnapshot.docs.map(i => {
@@ -39,7 +41,7 @@ export async function GetAllItems(){
   return(dataItems);
 }
 
-export async function GetItemFiltered(id){
+export async function GetItemFiltered(id){ //filtrado por ID para itemdetail
     const itemsRef = collection (db, "items");
 
     const docRef = doc(itemsRef, id);
@@ -49,17 +51,22 @@ export async function GetItemFiltered(id){
     return docsSnapshot.data();
 }
 
-// export async function GetItemsByCategory(catId){
+export async function GetItemsByCategory(catId){ //filtrado por categoría desde firebase para secciones de navbar
 
-//   const itemsRef = collection (db, "items");
+  const itemsRef = collection (db, "items");
 
-//   const q = query(itemsRef, where("categoria", "==", "Armados"))
+  const q = query(itemsRef, orderBy("id", "asc"), where("categoria", "==", catId))
   
-//   const querySnap = await getDocs(q);
+  const docsSnapshot = await getDocs(q);
   
-//   querySnap.forEach((doc) => {
-//     console.log(doc.id, "=>", doc.data())
-//   })
-// }
+  const dataItems = docsSnapshot.docs.map(i => {
+    const item = {
+      ...i.data(),
+      id: i.id
+    }
+    return item;
+  })
+  return(dataItems)
+}
 
 export const getData = () => getFirestore(app)

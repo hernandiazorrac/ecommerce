@@ -10,7 +10,7 @@ function NavbarComp(){
     return(
     <header>
         <div>
-            <Navbar bg="dark" variant="dark" expand="lg">
+            <Navbar bg="dark" variant="dark" expand="lg" className='navbar'>
                 <Container>
                 <Link to="/ecommerce">
                 <Navbar.Brand>

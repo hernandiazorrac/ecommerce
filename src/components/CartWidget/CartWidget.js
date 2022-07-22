@@ -10,6 +10,7 @@ function CartWidget(){
 
     items.map((item) => {
         itemsInCart = itemsInCart + item.cant;
+        return itemsInCart;
     })
 
     return(

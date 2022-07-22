@@ -1,4 +1,4 @@
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom"
 import './Item.css';
 
@@ -7,7 +7,7 @@ function Item ({id, product, price, category, img, model}) {
     return(
             <Card style={{ width: '15rem' }} className="mb-4 mx-2 border-0 rounded-0 itemCard">
                 <Link to={`/producto/${id}`} style={{ textDecoration: 'none', color: '#000' }}>
-                    <Card.Img variant="top" className="" src={img} />
+                    <Card.Img variant="top" className="cardImg" src={img} />
                 <Card.Body>
                     <Card.Title className="fs-6 fw-bold text-uppercase">{product} - {model}</Card.Title>
                     <Card.Text>

@@ -2,7 +2,6 @@ import './ItemListContainer.css'
 import ItemList from './ItemList';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { collection, getDocs, getFirestore } from 'firebase/firestore'
 import { GetAllItems, GetItemsByCategory } from '../../services/firestore';
 
 function ItemListContainer({ greetings }){
@@ -13,36 +12,24 @@ function ItemListContainer({ greetings }){
     
 
     useEffect(() => {
-        if(catId === undefined){
-            GetAllItems().then((dataFiltered) => {
-                    setInfo(dataFiltered)
+        if(!catId){
+            GetAllItems().then((data) => {
+                    setInfo(data)
                     setIsLoading(false)
+            })
+        }else{
+            GetItemsByCategory(catId).then((data) => {
+                setInfo(data)
+                setIsLoading(false)
             })
         }
         }, [catId])
 
-        // if(catId === undefined){
-
-        // }else{
-        //     setTimeout(() => {
-        //         fetch('/data/productos.json', {
-        //             headers : { 
-        //               'Content-Type': 'application/json',
-        //               'Accept': 'application/json'
-        //              }
-        //             })
-        //             .then(res => res.json())
-        //             .then(data => setInfo(data.filter(i => i.categoria.toUpperCase() === catId.toUpperCase())))
-        //             setIsLoading(false)
-        //     }, 500);
-        // }
         
-
-
     return(
         <>
-            {catId !== undefined && <h2 className="productosTitulo mt-5 text-uppercase">{catId}</h2>}
-            <h2 className="productosTitulo mt-5 text-uppercase pb-4">{greetings}</h2>
+            {catId ? <h2 className="productosTitulo mt-5 pb-4 text-uppercase">{catId}</h2> : <h2 className="productosTitulo mt-5 text-uppercase pb-4">{greetings}</h2>}
+            
             
             {isLoading && <p>Cargando...</p>}
             <ItemList productos={info}/>

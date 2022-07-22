@@ -2,7 +2,7 @@ import { useContext, useState, } from "react"
 import { Link } from "react-router-dom"
 import { CartContext } from "../Context/CartContext"
 import ItemCount from "./ItemCount"
-import {isLoading} from './ItemListContainer'
+
 
 export const ItemDetail = ({
     marca, modelo, stock, precio, img, descripcion, item, id
@@ -20,9 +20,9 @@ export const ItemDetail = ({
     }
 
     return(
-        <>
+        <div className="">
             
-            <img src={img} alt={'lorem'}/>
+            <img src={img} alt={descripcion} className="m-5 border"/>
             <h2>{marca} - {modelo}</h2>
             <h3>Precio: ${Intl.NumberFormat("es-AR").format(precio)} </h3>
             <h4>{descripcion}</h4>
@@ -37,7 +37,7 @@ export const ItemDetail = ({
                 
             }
 
-        </>
+        </div>
     )
 }
 

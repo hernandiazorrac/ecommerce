@@ -22,7 +22,7 @@ const Cart = () => {
             {
                 items.map(item =>(
                 <div className="p-2" key={item.id}>
-                        <img className="img-fluid cartItemImg" src={item.img} />
+                        <img className="img-fluid cartItemImg" src={item.img} alt={item.descripcion} />
                         <h4 className="">{item.marca} - {item.modelo} (x{item.cant})</h4>
                         <p>{item.descripcion}</p>
                         <p>${Intl.NumberFormat("es-AR").format(item.precio)}</p>
