@@ -24,7 +24,7 @@ export async function GetAllItems(){
   //trae la colección desde firebase
   const itemsRef = collection(db, "items");
 
-  const q = query(itemsRef, orderBy("id", "asc"))
+  const q = query(itemsRef, orderBy("id", "asc")) //trae todos los items en orden de ID
 
   //lee los documentos de la colección con getDocs
   const docsSnapshot = await getDocs(q)
