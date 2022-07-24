@@ -1,23 +1,24 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom";
 import { CartContext } from "../Context/CartContext"
+import FormOrder  from "../Orders/FormOrder/FormOrder"
 import './Cart.css'
 
 const Cart = () => {
     const { items, removeItem, clearCart, areYouSureDelete, areYouSureClear, getTotal } = useContext(CartContext);
-
-    
 
     if (items.length === 0) {
         return (
             <div>
                 <p>No hay productos en el carrito.</p>
                 <p><Link to="/ecommerce">Volver a home</Link></p>
+                
             </div>
         )}else{
 
     return(
         <div>
+            
             <h2 className="border-bottom p-3">Productos en tu carrito:</h2>
             {
                 items.map(item =>(
@@ -32,9 +33,11 @@ const Cart = () => {
             }
 
             <div className="border p-4 my-5">
-            <h4 className="">Total: ${getTotal()}</h4>   
+            <h4 className="">Total: ${getTotal()}</h4>
             <div className="btn btn-danger btn-sm" onClick={() => {clearCart(); areYouSureClear();}}>Vaciar carrito</div>
-            </div>
+            <FormOrder />
+            <div className="btn btn-success btn-sm">Finalizar compra</div>
+            </div>           
         </div>
     )
 }
