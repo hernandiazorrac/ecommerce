@@ -68,5 +68,3 @@ export async function GetItemsByCategory(catId){ //filtrado por categoría desde
   })
   return(dataItems)
 }
-
-export const getData = () => getFirestore(app)

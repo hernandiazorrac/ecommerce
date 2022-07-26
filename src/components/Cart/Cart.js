@@ -14,33 +14,33 @@ const Cart = () => {
                 <p><Link to="/ecommerce">Volver a home</Link></p>
                 
             </div>
-        )}else{
+        )
+    }else{
+        return(
+            <div>
+                
+                <h2 className="border-bottom p-3">Productos en tu carrito:</h2>
+                {
+                    items.map(item =>(
+                    <div className="p-2" key={item.id}>
+                            <img className="img-fluid cartItemImg" src={item.img} alt={item.descripcion} />
+                            <h4 className="">{item.marca} - {item.modelo} (x{item.cant})</h4>
+                            <p>{item.descripcion}</p>
+                            <p>${Intl.NumberFormat("es-AR").format(item.precio)}</p>
+                            <button className="btn btn-warning btn-sm" onClick={() => {removeItem(item.id); areYouSureDelete(); }}>Borrar producto</button>
+                        </div>
+                    ))
+                }
 
-    return(
-        <div>
-            
-            <h2 className="border-bottom p-3">Productos en tu carrito:</h2>
-            {
-                items.map(item =>(
-                <div className="p-2" key={item.id}>
-                        <img className="img-fluid cartItemImg" src={item.img} alt={item.descripcion} />
-                        <h4 className="">{item.marca} - {item.modelo} (x{item.cant})</h4>
-                        <p>{item.descripcion}</p>
-                        <p>${Intl.NumberFormat("es-AR").format(item.precio)}</p>
-                        <button className="btn btn-warning btn-sm" onClick={() => {removeItem(item.id); areYouSureDelete(); }}>Borrar producto</button>
-                    </div>
-                ))
-            }
-
-            <div className="border p-4 my-5">
-            <h4 className="">Total: ${getTotal()}</h4>
-            <div className="btn btn-danger btn-sm" onClick={() => {clearCart(); areYouSureClear();}}>Vaciar carrito</div>
-            <FormOrder />
-            <div className="btn btn-success btn-sm">Finalizar compra</div>
-            </div>           
-        </div>
-    )
-}
+                <div className="border p-4 my-5">
+                <h4 className="">Total: ${getTotal()}</h4>
+                <div className="btn btn-danger btn-sm" onClick={() => {clearCart(); areYouSureClear();}}>Vaciar carrito</div>
+                </div> 
+                <div className="mb-4 mx-4">Rellená el formulario para completar el proceso de compra.</div>
+                <FormOrder />          
+            </div>
+        )
+    }
 }
 
 export default Cart

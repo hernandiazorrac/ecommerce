@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import  ItemDetail  from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { GetItemFiltered } from "../../services/firestore";
+import Loader from "../Loader/Loader";
 
 
 export const ItemDetailContainer = () => {
@@ -22,7 +23,7 @@ export const ItemDetailContainer = () => {
 
     return(
         <>
-        {isLoading ? <p>Cargando...</p> : <ItemDetail {...datos} />}
+        {isLoading ? <Loader /> : <ItemDetail {...datos} />}
         </>
     )
 }
