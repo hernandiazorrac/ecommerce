@@ -46,16 +46,19 @@ export const FormOrder = () => {
         setLoading(true)
         const OrdersRef = collection(db, "orders")
         //agrega el documento con los datos de la compra a "orders"
-        await addDoc(OrdersRef, orderData).then((doc) => setNewOrderId(doc.id))
+        await addDoc(OrdersRef, orderData).then((doc) => {
+            setNewOrderId(doc.id)
 
         
-        Swal.fire({
-            icon: 'success',
-            title: `Tu ID de compra es: ${newOrderId}`,
-            html: `¡Muchas gracias por tu compra! Te enviamos más información a <strong>${newEmail}</strong>`
-        })
-        setLoading(false)
-    }
+            Swal.fire({
+                icon: 'success',
+                title: `Tu ID de compra es: ${doc.id}`,
+                html: `¡Muchas gracias por tu compra! Te enviamos más información a <strong>${newEmail}</strong>`
+            })
+            setLoading(false)
+            }
+    )
+}
 
     return(
         <form className="container formContainer">
@@ -72,11 +75,12 @@ export const FormOrder = () => {
             </div>
             
             {loading && <Loader />}
-            
+
             <button type="button" className="btn btn-success btn-sm mb-5" onClick={CreateOrder}>Finalizar compra</button>
         </form>
     )
 
-}
+    }
+
 
 export default FormOrder;
