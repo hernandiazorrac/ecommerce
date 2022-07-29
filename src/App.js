@@ -13,7 +13,7 @@ function App() {
         <CartProvider>
           <NavbarComp />
             <Routes>
-              <Route path="/ecommerce" element={<ItemListContainer greetings={'destacados'}/>}></Route>
+              <Route path="/ecommerce" element={<ItemListContainer greetings={'todos los productos'}/>}></Route>
               <Route path="/categoria/:catId" element={<ItemListContainer />}></Route>
               <Route path="/producto/:productoId" element={<ItemDetailContainer />}></Route>
               <Route path="/cart" element={<Cart />}></Route>

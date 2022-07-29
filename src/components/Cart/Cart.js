@@ -34,9 +34,9 @@ const Cart = () => {
 
                 <div className="border p-4 my-5">
                 <h4 className="">Total: ${getTotal()}</h4>
-                <div className="btn btn-danger btn-sm" onClick={() => {clearCart(); areYouSureClear();}}>Vaciar carrito</div>
+                <div className="btn btn-danger btn-sm" onClick={areYouSureClear}>Vaciar carrito</div>
                 </div> 
-                <div className="mb-4 mx-4">Rellená el formulario para completar el proceso de compra.</div>
+                
                 <FormOrder />          
             </div>
         )

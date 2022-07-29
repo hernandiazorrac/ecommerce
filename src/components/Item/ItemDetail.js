@@ -2,7 +2,7 @@ import { useContext, useState, } from "react"
 import { Link } from "react-router-dom"
 import { CartContext } from "../Context/CartContext"
 import ItemCount from "./ItemCount"
-
+import './ItemDetail.css'
 
 export const ItemDetail = ({
     marca, modelo, stock, precio, img, descripcion, item, id
@@ -20,12 +20,11 @@ export const ItemDetail = ({
     }
 
     return(
-        <div className="">
-            
-            <img src={img} alt={descripcion} className="m-5 border"/>
+        <>
+            <img src={img} alt={descripcion} className="mb-3 mt-5 border imgDetail"/>
             <h2>{marca} - {modelo}</h2>
             <h3>Precio: ${Intl.NumberFormat("es-AR").format(precio)} </h3>
-            <h4>{descripcion}</h4>
+            <h5 className="p-3">{descripcion}</h5>
             
 
             {
@@ -37,7 +36,7 @@ export const ItemDetail = ({
                 
             }
 
-        </div>
+        </>
     )
 }
 

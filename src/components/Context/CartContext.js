@@ -64,11 +64,13 @@ export const CartProvider = ({ children }) => {
             if (result.isDismissed) {
                 setItems(items)
             }else if (result.isConfirmed){
+                
                 Swal.fire({
                     title: 'Vaciado',
                     text: "Carrito vaciado con éxito.",
                     icon: 'success',
             })
+            clearCart()
         }})
     }
 

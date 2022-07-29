@@ -14,9 +14,6 @@ function Item ({id, product, price, category, img, model}) {
                         <span className="d-flex justify-content-center mb-3 fs-6 fw-light">${Intl.NumberFormat("es-AR").format(price)}</span>
                         <span className="text-capitalize border rounded-pill px-2 py-1 fw-light">Categoría: {category}</span>
                     </Card.Text>
-                    {/* <Link to={`/producto/${id}`}>
-                        <Button className="btn btn-dark btn-sm itemDetallesBoton">Ver detalles</Button>
-                    </Link> */}
                 </Card.Body>
                 </Link>
             </Card>

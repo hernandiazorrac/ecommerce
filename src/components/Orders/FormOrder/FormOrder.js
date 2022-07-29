@@ -15,7 +15,7 @@ export const FormOrder = () => {
     const [newOrderId, setNewOrderId] = useState("")
     const [loading, setLoading] = useState(false)
 
-    const { items, getTotal } = useContext(CartContext)
+    const { items, getTotal, clearCart } = useContext(CartContext)
 
 
     const localDate = () => {
@@ -48,12 +48,17 @@ export const FormOrder = () => {
         //agrega el documento con los datos de la compra a "orders"
         await addDoc(OrdersRef, orderData).then((doc) => {
             setNewOrderId(doc.id)
-
         
             Swal.fire({
                 icon: 'success',
-                title: `Tu ID de compra es: ${doc.id}`,
-                html: `¡Muchas gracias por tu compra! Te enviamos más información a <strong>${newEmail}</strong>`
+                title: `Tu ID de compra es: <u>${doc.id}</u>`,
+                html: `¡Muchas gracias por tu compra! Te enviamos más información a <strong>${newEmail}</strong>`,
+                confirmButtonText: `Ok`,
+                confirmButtonColor: '#000'
+            }).then((result) => {
+                if(result.isConfirmed){
+                    clearCart();
+                }
             })
             setLoading(false)
             }
@@ -61,7 +66,11 @@ export const FormOrder = () => {
 }
 
     return(
-        <form className="container formContainer">
+        <>
+        {newOrderId === "" ?
+            
+            <form className="container formContainer">
+            <div className="mb-4 mx-4">Rellená el formulario para completar el proceso de compra.</div>
             <div className="mb-3">
                 <input type="text" className="form-control" id="inputName" placeholder="Nombre" onChange={(e) => {setNewName(e.target.value)}}/>
             </div>
@@ -77,7 +86,12 @@ export const FormOrder = () => {
             {loading && <Loader />}
 
             <button type="button" className="btn btn-success btn-sm mb-5" onClick={CreateOrder}>Finalizar compra</button>
-        </form>
+            </form>  
+        :
+            <span></span>
+    }
+        
+        </>
     )
 
     }
