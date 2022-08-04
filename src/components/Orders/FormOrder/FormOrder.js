@@ -11,7 +11,7 @@ import '../../Buttons/SendButton/SendButton.css'
 export const FormOrder = () => {
 
    const [newName, setNewName] = useState("")
-   const [newPhoneNum, setNewPhoneNum] = useState("")
+   const [newPhoneNum, setNewPhoneNum] = useState(0)
    const [newEmail, setNewEmail] = useState("")
    const [newOrderId, setNewOrderId] = useState("")
    const [loading, setLoading] = useState(false)
@@ -96,7 +96,7 @@ export const FormOrder = () => {
                           <input type="text" className="form-control" placeholder="Nombre completo" onChange={(e) => {setNewName(e.target.value)}} required/>
                        </div>
                        <div className="col-sm-8 col-11 mx-auto p-2">
-                           <input type="text" className="form-control" placeholder="Teléfono" onChange={(e) => {setNewPhoneNum(e.target.value)}} required />
+                           <input onKeyPress={(event) => {if (!/[0-9 +]/.test(event.key)) {event.preventDefault();}}} type="text" className="form-control" placeholder="Teléfono" onChange={(e) => {setNewPhoneNum(e.target.value)}} required />
                        </div>
                        <div className="form-group col-sm-8 col-11 mx-auto p-2">
                           <input type="email" className="form-control" placeholder="Email" onChange={(e) => {setNewEmail(e.target.value)}} required />
