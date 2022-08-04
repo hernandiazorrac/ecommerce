@@ -1,5 +1,5 @@
 import { collection, addDoc} from "firebase/firestore";
-import { useContext, useState } from "react";
+import { useContext,  useState } from "react";
 import Swal from "sweetalert2";
 import { db } from "../../../services/firestore"
 import { CartContext } from "../../Context/CartContext";
@@ -10,13 +10,13 @@ import '../../Buttons/SendButton/SendButton.css'
 
 export const FormOrder = () => {
 
-    const [newName, setNewName] = useState("")
-    const [newPhoneNum, setNewPhoneNum] = useState(0)
-    const [newEmail, setNewEmail] = useState("")
-    const [newOrderId, setNewOrderId] = useState("")
-    const [loading, setLoading] = useState(false)
-
-    const { items, getTotal, clearCart } = useContext(CartContext)
+   const [newName, setNewName] = useState("")
+   const [newPhoneNum, setNewPhoneNum] = useState("")
+   const [newEmail, setNewEmail] = useState("")
+   const [newOrderId, setNewOrderId] = useState("")
+   const [loading, setLoading] = useState(false)
+   
+   const { items, getTotal, clearCart } = useContext(CartContext)
 
 
     const localDate = () => {
@@ -63,10 +63,22 @@ export const FormOrder = () => {
             setLoading(false)
             }
     )
-}
+   }
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      // if(newName.length == 0 || newPhoneNum.length == 0 || newEmail.length == 0){
+      //    setValidationError(true)
+      // }
+      if(newName && newPhoneNum && newEmail){
+         CreateOrder();
+      }
+
+    }
 
     return(
         <>
+        {loading && <Loader />}
     
         {newOrderId === "" ?
 
@@ -76,24 +88,22 @@ export const FormOrder = () => {
                  <h2>PAGO</h2>
                  <p>Llená el formulario para completar la compra</p>
               </div>
-              <form>
+              <form onSubmit={handleSubmit}>
                  <div className="card-details">
                     <h3 className="title text-uppercase">Datos del cliente</h3>
                     <div className="row">
-                       <div className="form-group col-sm-8 col-11 mx-auto p-2">
-                          <input id="card-holder" type="text" className="form-control" placeholder="Nombre completo" onChange={(e) => {setNewName(e.target.value)}} />
+                       <div className="col-sm-8 col-11 mx-auto p-2">
+                          <input type="text" className="form-control" placeholder="Nombre completo" onChange={(e) => {setNewName(e.target.value)}} required/>
+                       </div>
+                       <div className="col-sm-8 col-11 mx-auto p-2">
+                           <input type="text" className="form-control" placeholder="Teléfono" onChange={(e) => {setNewPhoneNum(e.target.value)}} required />
                        </div>
                        <div className="form-group col-sm-8 col-11 mx-auto p-2">
-                          <div className="input-group expiration-date">
-                             <input type="text" className="form-control" placeholder="Teléfono" onChange={(e) => {setNewPhoneNum(e.target.value)}} />
-                          </div>
-                       </div>
-                       <div className="form-group col-sm-8 col-11 mx-auto p-2">
-                          <input type="email" className="form-control" placeholder="Email" onChange={(e) => {setNewEmail(e.target.value)}} />
+                          <input type="email" className="form-control" placeholder="Email" onChange={(e) => {setNewEmail(e.target.value)}} required />
                        </div>
                        <div className="form-group col-sm-12">
-                          {loading && <Loader />}
-                          <button type="button" className="btnSend" onClick={CreateOrder}>
+                          
+                          <button type="submit" className="btnSend">
                              <div className="svg-wrapper-1">
                                 <div className="svg-wrapper">
                                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-send" width="20" height="20" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -111,9 +121,6 @@ export const FormOrder = () => {
               </form>
            </div>
         </section>
-
-
-            
         :
                 <span></span>
             }        

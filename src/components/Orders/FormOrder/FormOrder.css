@@ -45,6 +45,12 @@
 	margin: auto;
 }
 
+.form-validation{
+	padding-top: 10px;
+	color: red;
+	transition: .2s;
+}
+
 @media (min-width: 576px) {
 	.payment-form .title {
 		font-size: 1.2em;
