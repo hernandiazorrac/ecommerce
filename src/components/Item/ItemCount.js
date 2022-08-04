@@ -29,23 +29,24 @@ function ItemCount({item, stock, initial, onAdd}){
     
 
     return(<>
-        <div className='py-3'>
+        <div className='py-1 itemCountContainer'>
             
-            <span className='detailStockDisponible'>{stockActual > 1 ? `${stockActual} unidades disponibles` : `${stockActual} unidad disponible`}</span>
-
-            <div className='mt-3'>
+                <div className='mt-3'>
                 <button className='btn btn-dark btn-sm removeBtn' onClick={restar}>-</button>
                 <span className='justify-content-center px-3'>{num}</span>
                 <button className='btn btn-dark btn-sm addBtn' onClick={sumar}>+</button>
             </div>
             
             {  num > 0 ?
-                <button className="d-flex mx-auto mt-3 btn btn-warning btn-sm" onClick={() => onAdd({item}, num)}>Agregar al carrito
+                <button className="d-flex mt-3 mb-2 btn btn-warning btn-sm addToBtn" onClick={() => onAdd({item}, num)}>Agregar al carrito
                 </button>
                 :
-                <button className="d-flex mx-auto mt-3 btn btn-warning btn-sm disabled">Agregar al carrito
+                <button className="d-flex mt-3 mb-2 btn btn-warning btn-sm addToBtn disabled">Agregar al carrito
                 </button>
             }
+            
+            <span className='detailStockDisponible text-muted'>{stockActual > 1 ? `${stockActual} unidades disponibles` : `${stockActual} unidad disponible`}</span>
+
         </div>
         </>
     )

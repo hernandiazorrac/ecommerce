@@ -22,8 +22,8 @@ export const ItemDetailContainer = () => {
 
 
     return(
-        <>
-        {isLoading ? <Loader /> : <ItemDetail {...datos} />}
-        </>
+        <div className="py-5">
+            {isLoading ? <Loader /> : <ItemDetail {...datos} />}
+        </div>
     )
 }

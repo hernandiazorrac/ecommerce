@@ -1,9 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,400&display=swap');
+
 .itemCard{
     border-radius: 5px !important;
     box-shadow: 14px 15px 33px -8px rgba(0,0,0,0.11);
     -webkit-box-shadow: 14px 15px 33px -8px rgba(0,0,0,0.11);
     -moz-box-shadow: 14px 15px 33px -8px rgba(0,0,0,0.11);
     overflow: hidden;
+    transition: 0.2s;
+}
+
+.itemCard:hover{
+    box-shadow: 10px 10px 56px -16px rgba(0,0,0,0.39);
+    -webkit-box-shadow: 10px 10px 56px -16px rgba(0,0,0,0.39);
+    -moz-box-shadow: 10px 10px 56px -16px rgba(0,0,0,0.39);
+    cursor: pointer;
+}
+
+.productTitle{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    letter-spacing: -1px;
 }
 
 .cardImg{
@@ -12,4 +28,8 @@
 
 .cardImg:hover{
     transform: scale(1.1);
+}
+
+.productPrice{
+    font-size: .85em;
 }

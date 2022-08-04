@@ -29,8 +29,8 @@ function ItemListContainer({ greetings }){
         
     return(
         <>
-            {catId ? <h2 className="productosTitulo mt-5 pb-4 text-uppercase">{catId}</h2> : <h2 className="productosTitulo mt-5 text-uppercase pb-4">{greetings}</h2>}
             {isLoading && <Loader/>}
+            {catId ? <h2 className="productosTitulo py-4 text-uppercase border-bottom">{catId}</h2> : <h2 className="productosTitulo py-4 text-uppercase px-2 border-bottom">{greetings}</h2>}
             <ItemList productos={info}/>
             
         </>

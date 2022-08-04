@@ -5,6 +5,7 @@ import { db } from "../../../services/firestore"
 import { CartContext } from "../../Context/CartContext";
 import Loader from "../../Loader/Loader"
 import './FormOrder.css'
+import '../../Buttons/SendButton/SendButton.css'
 
 
 export const FormOrder = () => {
@@ -48,7 +49,6 @@ export const FormOrder = () => {
         //agrega el documento con los datos de la compra a "orders"
         await addDoc(OrdersRef, orderData).then((doc) => {
             setNewOrderId(doc.id)
-        
             Swal.fire({
                 icon: 'success',
                 title: `Tu ID de compra es: <u>${doc.id}</u>`,
@@ -67,30 +67,56 @@ export const FormOrder = () => {
 
     return(
         <>
+    
         {newOrderId === "" ?
+
+        <section className="payment-form">
+           <div className="container">
+              <div className="block-heading border-top">
+                 <h2>PAGO</h2>
+                 <p>Llená el formulario para completar la compra</p>
+              </div>
+              <form>
+                 <div className="card-details">
+                    <h3 className="title text-uppercase">Datos del cliente</h3>
+                    <div className="row">
+                       <div className="form-group col-sm-8 col-11 mx-auto p-2">
+                          <input id="card-holder" type="text" className="form-control" placeholder="Nombre completo" onChange={(e) => {setNewName(e.target.value)}} />
+                       </div>
+                       <div className="form-group col-sm-8 col-11 mx-auto p-2">
+                          <div className="input-group expiration-date">
+                             <input type="text" className="form-control" placeholder="Teléfono" onChange={(e) => {setNewPhoneNum(e.target.value)}} />
+                          </div>
+                       </div>
+                       <div className="form-group col-sm-8 col-11 mx-auto p-2">
+                          <input type="email" className="form-control" placeholder="Email" onChange={(e) => {setNewEmail(e.target.value)}} />
+                       </div>
+                       <div className="form-group col-sm-12">
+                          {loading && <Loader />}
+                          <button type="button" className="btnSend" onClick={CreateOrder}>
+                             <div className="svg-wrapper-1">
+                                <div className="svg-wrapper">
+                                   <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-send" width="20" height="20" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                      <line x1="10" y1="14" x2="21" y2="3" />
+                                      <path d="M21 3l-6.5 18a0.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a0.55 .55 0 0 1 0 -1l18 -6.5" />
+                                   </svg>
+                                </div>
+                             </div>
+                             <span>Enviar</span>
+                          </button>
+                       </div>
+                    </div>
+                 </div>
+              </form>
+           </div>
+        </section>
+
+
             
-            <form className="container formContainer">
-            <div className="mb-4 mx-4">Rellená el formulario para completar el proceso de compra.</div>
-            <div className="mb-3">
-                <input type="text" className="form-control" id="inputName" placeholder="Nombre" onChange={(e) => {setNewName(e.target.value)}}/>
-            </div>
-
-            <div className="mb-3">
-                <input type="email" className="form-control" id="inputEmail" placeholder="Email" onChange={(e) => {setNewEmail(e.target.value)}}/>
-            </div>
-
-            <div className="mb-3">
-                <input type="text" className="form-control" id="inputPhoneNum" placeholder="Número de teléfono" onChange={(e) => {setNewPhoneNum(e.target.value)}}/>
-            </div>
-            
-            {loading && <Loader />}
-
-            <button type="button" className="btn btn-success btn-sm mb-5" onClick={CreateOrder}>Finalizar compra</button>
-            </form>  
         :
-            <span></span>
-    }
-        
+                <span></span>
+            }        
         </>
     )
 

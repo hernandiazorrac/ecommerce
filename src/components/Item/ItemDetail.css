@@ -1,5 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,400&display=swap');
+
+.detailContainer{
+    font-family: 'Montserrat', sans-serif;
+    width: 900px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    border-radius: 10px;
+    padding: 0;
+
+    box-shadow: 14px 15px 33px -8px rgba(0,0,0,0.11);
+    -webkit-box-shadow: 14px 15px 33px -8px rgba(0,0,0,0.11);
+    -moz-box-shadow: 14px 15px 33px -8px rgba(0,0,0,0.11);
+}
+
+.imgContainer{
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 10px 0px 0 10px;
+}
+
+.textContainer {
+    width: 50%;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.titleDetail{
+    font-size: 4em;
+    text-transform: uppercase;
+}
+
+
+@media (max-width: 992px){
+    .textContainer{
+        width: 50%;
+    }
+    
+    .titleDetail{
+        font-size: 3.5em;
+    }
+
+    .imgDetail{
+        width: 80%;
+    }
+}
+
 @media (max-width: 768px){
+    .detailContainer{
+        height: auto;
+    }
+
+    .imgContainer{
+        width: 100%;
+    }
+
     .imgDetail{
         width: 50%;
+        box-sizing: border-box;
+    }
+
+    .textContainer{
+        width: 100%;
+    }
+
+    .itemCountContainer, .addToBtn{
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px){
+    .detailContainer{
+        padding: 10px;
+        margin: 10px;
+        height: auto;
+        width: auto;
+    }
+
+    .imgContainer{
+        width: 100%;
+    }
+
+    .imgDetail{
+        width: 50%;
+        box-sizing: border-box;
+    }
+
+    .textContainer{
+        width: 100%;
+    }
+    
+    .titleDetail{
+        font-size: 2em;
+    }
+
+    .itemCountContainer, .addToBtn{
+        text-align: center;
+        margin: 0 auto;
     }
 }

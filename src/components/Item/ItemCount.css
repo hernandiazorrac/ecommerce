@@ -3,7 +3,5 @@
 }
 
 .detailStockDisponible{
-    border: 1px solid black ;
-    border-radius: 25px;
-    padding: 5px 15px;
+    font-size: 12px;
 }

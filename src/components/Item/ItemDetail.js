@@ -6,13 +6,12 @@ import './ItemDetail.css'
 
 export const ItemDetail = ({
     marca, modelo, stock, precio, img, descripcion, item, id
-}) => { 
-    // const {addToCart} = useContext(CartContext)
+    }) => { 
+
     const [add, setAdd] = useState(false)
 
     const { addItem } = useContext(CartContext)
 
-    
 
     const onAdd = (item, cant) => {
         setAdd(!add)
@@ -21,20 +20,30 @@ export const ItemDetail = ({
 
     return(
         <>
-            <img src={img} alt={descripcion} className="mb-3 mt-5 border imgDetail"/>
-            <h2>{marca} - {modelo}</h2>
-            <h3>Precio: ${Intl.NumberFormat("es-AR").format(precio)} </h3>
-            <h5 className="p-3">{descripcion}</h5>
+            <div className="detailContainer container">
+                <div className="imgContainer">
+                    <img src={img} alt={descripcion} className="imgDetail" draggable="false" />
+                </div>
+
+                <div className="textContainer">
+                    <h2 className="titleDetail">{marca} {modelo}</h2>
+                    <h5 className="priceDetail text-muted">${Intl.NumberFormat("es-AR").format(precio)} </h5>
+                    <h6 className="descriptionDetail text-muted pb-4 border-bottom">{descripcion}</h6>
+                    
+                    {
+                        add ? <span className="d-block py-3">¡Producto añadido!</span> : <ItemCount key={id} item={item} stock={stock} initial={0} onAdd={onAdd}/>
+                    }
+
+                    {
+                        add && <div><Link to="/cart" className="btn btn-success btn-sm">Ir al carrito</Link></div>
+                    }
+                </div>
+            </div>
             
 
-            {
-                add ? <span className="d-block border-top p-2">¡Añadido al carrito!</span> : <ItemCount key={id} item={item} stock={stock} initial={0} onAdd={onAdd}/>
-            }
+            
 
-            {
-                add && <Link to="/cart" className="btn btn-success btn-sm">Finalizar compra</Link>
-                
-            }
+            
 
         </>
     )

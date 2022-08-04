@@ -1,0 +1,50 @@
+.btnDelete {
+    font-family: inherit;
+    font-size: 15px;
+    background: #e62222;
+    color: white;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    border: none;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: all 0.2s;
+   }
+   
+   .btnDelete span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+   }
+   
+   .btnDelete svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+   }
+
+   .btnDelete:hover {
+    background: #ff3636;
+   }
+
+   .btnDelete:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+   }
+   
+   .btnDelete:hover svg {
+    transform: translateX(180%) scale(1.5);
+   }
+   
+   .btnDelete:hover span {
+    transform: translateX(10em);
+   }
+   
+   .btnDelete:active {
+    transform: scale(0.96);
+   }
+
+   
+   
