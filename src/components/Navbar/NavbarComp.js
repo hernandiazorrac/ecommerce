@@ -12,7 +12,7 @@ function NavbarComp(){
         <div>
             <Navbar bg="dark" variant="dark" expand="lg" className='navbar'>
                 <Container>
-                <Link to="/ecommerce">
+                <Link to="/">
                 <Navbar.Brand>
             <img
               alt=""
