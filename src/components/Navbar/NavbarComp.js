@@ -5,14 +5,18 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 function NavbarComp(){
+
+    const [expanded, setExpanded] = useState(false);
+
     return(
     <header>
         <div>
-            <Navbar bg="dark" variant="dark" expand="lg" className='navbar'>
+            <Navbar bg="dark" variant="dark" expand="lg" className='navbar' expanded={expanded}>
                 <Container>
-                <Link to="/">
+                <Link to="/" onClick={() => setExpanded(false)}>
                 <Navbar.Brand>
             <img
               alt=""
@@ -24,17 +28,17 @@ function NavbarComp(){
           </Navbar.Brand>
           </Link>
           
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : "expanded")} />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto navbarItems">
-                            <Link to="/categoria/armados" className='navLink'>Armados</Link>
-                            <Link to="/categoria/tablas" className='navLink'>Tablas</Link>
-                            <Link to="/categoria/trucks" className='navLink'>Trucks</Link>
-                            <Link to="/categoria/ruedas" className='navLink'>Ruedas</Link>
-                            <Link to="/categoria/rulemanes" className='navLink'>Rulemanes</Link>
-                            <Link to="/categoria/lijas" className='navLink'>Lijas</Link>
+                            <Link to="/categoria/armados" className='navLink' onClick={() => setExpanded(false)} >Armados</Link>
+                            <Link to="/categoria/tablas" className='navLink' onClick={() => setExpanded(false)}>Tablas</Link>
+                            <Link to="/categoria/trucks" className='navLink' onClick={() => setExpanded(false)}>Trucks</Link>
+                            <Link to="/categoria/ruedas" className='navLink' onClick={() => setExpanded(false)}>Ruedas</Link>
+                            <Link to="/categoria/rulemanes" className='navLink' onClick={() => setExpanded(false)}>Rulemanes</Link>
+                            <Link to="/categoria/lijas" className='navLink' onClick={() => setExpanded(false)}>Lijas</Link>
                         </Nav>
-                        <Link to="/cart" className='navLink'>
+                        <Link to="/cart" className='navLink' onClick={() => setExpanded(false)}>
                             <CartWidget />
                         </Link>
                     </Navbar.Collapse>
