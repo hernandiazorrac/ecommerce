@@ -5,7 +5,7 @@ import ItemCount from "./ItemCount"
 import './ItemDetail.css'
 
 export const ItemDetail = ({
-    marca, modelo, stock, precio, img, descripcion, item, id, categoria
+    marca, modelo, stock, precio, img, descripcion, item, id
     }) => { 
 
     const [add, setAdd] = useState(false)

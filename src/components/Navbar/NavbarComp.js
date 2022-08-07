@@ -14,7 +14,7 @@ function NavbarComp(){
     return(
     <header>
         <div>
-            <Navbar bg="white" variant="dark" expand="lg" className='navbar' expanded={expanded} fixed="top">
+            <Navbar bg="white" expand="lg" className='navbar' expanded={expanded} fixed="top">
                 <Container>
                 <Link to="/" onClick={() => setExpanded(false)}>
                 <Navbar.Brand>
