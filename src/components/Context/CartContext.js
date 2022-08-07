@@ -53,7 +53,7 @@ export const CartProvider = ({ children }) => {
     const areYouSureClear = () => {
         Swal.fire({
             title: '¿Estás seguro?',
-            text: "Estás por eliminar vaciar el carrito.",
+            text: "Estás por vaciar el carrito.",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#000',

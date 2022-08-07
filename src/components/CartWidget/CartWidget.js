@@ -1,5 +1,5 @@
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faCartShopping} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
 import { CartContext } from '../Context/CartContext';
 import './CartWidget.css';
@@ -14,12 +14,11 @@ function CartWidget(){
     })
 
     return(
-        <div className='cartWidget d-flex'>
-            <FontAwesomeIcon icon={faCartShopping} className="p-2" />
-
-            <div className="cartWidgetNumber">
+        <div className='cartWidget'>
+            <div className="cartWidgetNumber mx-auto">
                 {itemsInCart}
             </div>
+        <FontAwesomeIcon icon={faCartShopping} className="p-2 mx-auto" />
         </div>
     );
 }

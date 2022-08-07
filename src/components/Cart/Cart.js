@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ClearButton } from "../Buttons/ClearButton/ClearButton";
 import { CartContext } from "../Context/CartContext";
 import { EmptyCart } from "../EmptyCart/EmptyCart";
-import FormOrder from "../Orders/FormOrder/FormOrder";
+import FormOrder from "../Orders/FormOrder/FormOrder"
 import './Cart.css';
 import '../Buttons/DeleteButton/DeleteButton.css';
 
@@ -22,7 +22,7 @@ const Cart = () => {
                             <div className="card cartCard p-4">
                             <div className="row g-0" >
                                 <div className="col-md-4 col-sm-4 col-3">
-                                <img src={item.img} className="img-fluid border rounded-circle cartItemImg" alt={item.descripcion} />
+                                <img src={item.img} draggable="false" className="img-fluid border rounded-circle cartItemImg" alt={item.descripcion} />
                                 </div>
                                 <div className="col-md-8 col-sm-8 col-8">
                                 <div className="card-body">

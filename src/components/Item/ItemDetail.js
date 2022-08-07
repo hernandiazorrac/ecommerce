@@ -5,7 +5,7 @@ import ItemCount from "./ItemCount"
 import './ItemDetail.css'
 
 export const ItemDetail = ({
-    marca, modelo, stock, precio, img, descripcion, item, id
+    marca, modelo, stock, precio, img, descripcion, item, id, categoria
     }) => { 
 
     const [add, setAdd] = useState(false)
@@ -22,7 +22,8 @@ export const ItemDetail = ({
         <>
             <div className="detailContainer container">
                 <div className="imgContainer">
-                    <img src={img} alt={descripcion} className="imgDetail" draggable="false" />
+                <img src={img} alt={descripcion} className="imgDetail" draggable="false" />
+                    
                 </div>
 
                 <div className="textContainer">

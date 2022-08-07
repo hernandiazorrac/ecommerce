@@ -35,7 +35,7 @@
    }
    
    .btnClear:hover svg {
-    transform: translateX(275%) scale(1.5);
+    transform: translateX(265%) scale(1.5);
    }
    
    .btnClear:hover span {

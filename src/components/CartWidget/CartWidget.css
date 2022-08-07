@@ -1,12 +1,12 @@
 .cartWidget{
     font-size: 1.5em; 
-    color: grey;
+    color: #000;
     cursor: pointer;
     transition: 0.4s;
 }
 
 .cartWidget:hover{
-    color: #C7C8C9;
+    color: #838383;
 }
 
 .navbar-toggler, .navbar-toggler:focus{
@@ -16,4 +16,6 @@
 
 .cartWidgetNumber{
     font-size: 15px;
+    margin-bottom: -.7em;
+    padding-left: 2.6em;
 }

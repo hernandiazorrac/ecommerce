@@ -35,7 +35,7 @@
    }
    
    .btnSend:hover svg {
-    transform: translateX(140%) scale(1.5);
+    transform: translateX(130%) scale(1.5);
    }
    
    .btnSend:hover span {

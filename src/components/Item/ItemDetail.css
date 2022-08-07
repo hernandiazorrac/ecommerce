@@ -35,6 +35,7 @@
 }
 
 .titleDetail{
+    font-weight: 700;
     font-size: 4em;
     text-transform: uppercase;
 }

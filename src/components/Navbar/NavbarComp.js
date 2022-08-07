@@ -14,24 +14,24 @@ function NavbarComp(){
     return(
     <header>
         <div>
-            <Navbar bg="dark" variant="dark" expand="lg" className='navbar' expanded={expanded}>
+            <Navbar bg="white" variant="dark" expand="lg" className='navbar' expanded={expanded} fixed="top">
                 <Container>
                 <Link to="/" onClick={() => setExpanded(false)}>
                 <Navbar.Brand>
             <img
-              alt=""
+              alt="logo"
               src={logo}
               width="70"
               height="70"
-              className="d-inline-block align-top"
+              className="d-inline-block align-top navbarLogo"
             />{' '}
           </Navbar.Brand>
           </Link>
           
                 <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : "expanded")} />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto navbarItems">
-                            <Link to="/categoria/armados" className='navLink' onClick={() => setExpanded(false)} >Armados</Link>
+                        <Nav className="me-auto navbarItems mx-auto">
+                            <Link to="/categoria/armados" className='navLink' onClick={() => setExpanded(false)}>Armados</Link>
                             <Link to="/categoria/tablas" className='navLink' onClick={() => setExpanded(false)}>Tablas</Link>
                             <Link to="/categoria/trucks" className='navLink' onClick={() => setExpanded(false)}>Trucks</Link>
                             <Link to="/categoria/ruedas" className='navLink' onClick={() => setExpanded(false)}>Ruedas</Link>

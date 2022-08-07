@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 
 .cartContainer{
     font-family: 'Montserrat', sans-serif;
@@ -21,14 +21,13 @@
     transition: 0.2s;
 }
 
-.item-name{
-	font-weight:600;
-	font-size: 0.9em;
-}
-
 .cartTitle{
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     margin-bottom:1.2rem;
 	color: #212529;
+}
+
+.card-title, .total{
+    font-weight: 700;
 }
