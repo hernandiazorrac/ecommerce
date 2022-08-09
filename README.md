@@ -2,6 +2,10 @@
 
 _Tienda virtual ficticia de un skateshop a modo de plasmar los contenidos dados en el curso de ReactJS de Coderhouse (2022)._
 
+### Navegación
+
+![alt text](https://raw.githubusercontent.com/hernandiazorrac/ecommerce/main/src/navigation.gif)
+
 ### Instalación 🔧
 
 _Para visualizar correctamente este proyecto de manera local, se debe ingresar la siguiente línea en su terminal para poder instalar todas las dependencias utilizadas en este proyecto:_
