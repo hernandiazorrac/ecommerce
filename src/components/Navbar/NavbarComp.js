@@ -31,12 +31,13 @@ function NavbarComp(){
                 <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : "expanded")} />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto navbarItems mx-auto">
+                            <Link to="/" className='navLink' onClick={() => setExpanded(false)}>Home</Link>
                             <Link to="/categoria/armados" className='navLink' onClick={() => setExpanded(false)}>Armados</Link>
                             <Link to="/categoria/tablas" className='navLink' onClick={() => setExpanded(false)}>Tablas</Link>
                             <Link to="/categoria/trucks" className='navLink' onClick={() => setExpanded(false)}>Trucks</Link>
                             <Link to="/categoria/ruedas" className='navLink' onClick={() => setExpanded(false)}>Ruedas</Link>
                             <Link to="/categoria/rulemanes" className='navLink' onClick={() => setExpanded(false)}>Rulemanes</Link>
-                            <Link to="/categoria/lijas" className='navLink' onClick={() => setExpanded(false)}>Lijas</Link>
+                            <Link to="/categoria/accesorios" className='navLink' onClick={() => setExpanded(false)}>Accesorios</Link>
                         </Nav>
                         <Link to="/cart" className='navLink' onClick={() => setExpanded(false)}>
                             <CartWidget />

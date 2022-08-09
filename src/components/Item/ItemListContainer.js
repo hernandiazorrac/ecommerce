@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { GetAllItems, GetItemsByCategory } from '../../services/firestore';
 import Loader from '../Loader/Loader';
 import { Slider } from '../Slider/Slider';
+import { ChevronArrow } from '../ChevronArrow/ChevronArrow';
 
 function ItemListContainer({ greetings }){
 
@@ -33,7 +34,7 @@ function ItemListContainer({ greetings }){
     return(
         <>
             {!catId & carouselLoading ? <Slider /> : ""}
-            {catId ? <h2 className="productosTitulo py-4 text-uppercase border-bottom">{catId}</h2> : <h2 className="productosTitulo py-4 text-uppercase px-2 border-bottom">{greetings}</h2>}
+            {catId ? <h2 className="productosTitulo py-4 text-uppercase border-bottom">{catId}</h2> : <div><h2 className="productosTitulo py-4 text-uppercase px-2 border-bottom"><ChevronArrow /> {greetings} <ChevronArrow /></h2></div>}
             {isLoading && <Loader/>}
             <ItemList productos={info}/>
         </>
